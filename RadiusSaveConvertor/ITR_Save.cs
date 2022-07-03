@@ -1340,14 +1340,24 @@ namespace RadiusSaveConvertor
         {
             sleepRestoreHealth.Write(writer);
             locationOnMap.Write(writer);
-            enemySense.Write(writer);
-            showTracers.Write(writer);
             showTips.Write(writer);
+            hunger.Write(writer);
+            enemySense.Write(writer);
+            enemyHealth.Write(writer);
+            enemyDamage.Write(writer);
+            enemyCount.Write(writer);
             itemsDropType.Write(writer);
+            itemSellPrice.Write(writer);
+            weaponShootDamage.Write(writer);
+            anomalyDamage.Write(writer);
+            anomalyAmount.Write(writer);
+            showTracers.Write(writer);
+            missionMoneyReward.Write(writer);
+            tideTime.Write(writer);
         }
         public override string ToString()
         {
-            return "Game Difficulty";
+            return "Radius Game Difficulty";
         }
     }
     public class ITR_FMapData : ITR_ITEM
@@ -2066,6 +2076,9 @@ namespace RadiusSaveConvertor
                     break;
                 case "FGameDifficulty":
                     ((ITR_FGameDifficulty)value).Write(writer);
+                    break;
+                case "FRadiusGameDifficulty":
+                    ((ITR_FRadiusGameDifficulty)value).Write(writer);
                     break;
                 case "FMapData":
                     ((ITR_FMapData)value).Write(writer);

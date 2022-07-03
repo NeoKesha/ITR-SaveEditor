@@ -512,6 +512,9 @@ namespace RadiusSaveEditorGUI
                 case "FGameDifficulty":
                     UpdateTreeFGameDifficulty(actualRoot, (ITR_FGameDifficulty)value);
                     break;
+                case "FRadiusGameDifficulty":
+                    UpdateTreeFRadiusGameDifficulty(actualRoot, (ITR_FRadiusGameDifficulty)value);
+                    break;
                 case "FMapData":
                     break;
                 case "FLevelDecorData":
@@ -676,6 +679,25 @@ namespace RadiusSaveEditorGUI
             UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.showTracers);
             UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.itemsDropType);
             UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.showTips);
+        }
+        private void UpdateTreeFRadiusGameDifficulty(TreeNode root, ITR_FRadiusGameDifficulty gameDifficulty)
+        {
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.sleepRestoreHealth);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.locationOnMap);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.showTips);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.hunger);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.enemySense);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.enemyHealth);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.enemyDamage);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.enemyCount);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.itemsDropType);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.itemSellPrice);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.weaponShootDamage);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.anomalyDamage);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.anomalyAmount);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.showTracers);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.missionMoneyReward);
+            UpdateTreeProp(root.Nodes.Add(""), gameDifficulty.tideTime);
         }
         private void UpdateTreeFNameArray(TreeNode root, ITR_FNameArray names)
         {
