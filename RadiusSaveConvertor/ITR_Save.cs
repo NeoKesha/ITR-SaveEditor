@@ -1294,6 +1294,62 @@ namespace RadiusSaveConvertor
             return "Game Difficulty";
         }
     }
+
+    public class ITR_FRadiusGameDifficulty : ITR_ITEM
+    {
+        public ITR_PROP sleepRestoreHealth;
+        public ITR_PROP locationOnMap;
+        public ITR_PROP showTips;
+        public ITR_PROP hunger;
+        public ITR_PROP enemySense;
+        public ITR_PROP enemyHealth;
+        public ITR_PROP enemyDamage;
+        public ITR_PROP enemyCount;
+        public ITR_PROP itemsDropType;
+        public ITR_PROP itemSellPrice;
+        public ITR_PROP weaponShootDamage;
+        public ITR_PROP anomalyDamage;
+        public ITR_PROP anomalyAmount;
+        public ITR_PROP showTracers;
+        public ITR_PROP missionMoneyReward;
+        public ITR_PROP tideTime;
+        public ITR_FRadiusGameDifficulty()
+        {
+        }
+
+        public ITR_FRadiusGameDifficulty(BinaryReader reader)
+        {
+            sleepRestoreHealth = new ITR_PROP(reader);
+            locationOnMap = new ITR_PROP(reader);
+            showTips = new ITR_PROP(reader);
+            hunger = new ITR_PROP(reader);
+            enemySense = new ITR_PROP(reader);
+            enemyHealth = new ITR_PROP(reader);
+            enemyDamage = new ITR_PROP(reader);
+            enemyCount = new ITR_PROP(reader);
+            itemsDropType = new ITR_PROP(reader);
+            itemSellPrice = new ITR_PROP(reader);
+            weaponShootDamage = new ITR_PROP(reader);
+            anomalyDamage = new ITR_PROP(reader);
+            anomalyAmount = new ITR_PROP(reader);
+            showTracers = new ITR_PROP(reader);
+            missionMoneyReward = new ITR_PROP(reader);
+            tideTime = new ITR_PROP(reader);
+        }
+        public override void Write(BinaryWriter writer)
+        {
+            sleepRestoreHealth.Write(writer);
+            locationOnMap.Write(writer);
+            enemySense.Write(writer);
+            showTracers.Write(writer);
+            showTips.Write(writer);
+            itemsDropType.Write(writer);
+        }
+        public override string ToString()
+        {
+            return "Game Difficulty";
+        }
+    }
     public class ITR_FMapData : ITR_ITEM
     {
         public byte[] stream;
@@ -1802,6 +1858,7 @@ namespace RadiusSaveConvertor
             {"FPlayerStats", typeof(ITR_FPlayerStats)},
             {"FGameplayTagsTuple", typeof(ITR_FGameplayTagsTuple)},
             {"FGameDifficulty", typeof(ITR_FGameDifficulty)},
+            {"FRadiusGameDifficulty", typeof(ITR_FRadiusGameDifficulty)},
             {"FMapData", typeof(ITR_FMapData)},
             {"FLevelDecorData", typeof(ITR_FLevelDecorData)}
         };
